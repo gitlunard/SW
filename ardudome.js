@@ -53,19 +53,16 @@ function get_arduino_data() {
 
 // call PHP file sending "pin" & "cmd" got from HTML page, and update
 function set_arduino_data(pname,pvalue,idvalue) {
+            
 
-
-	//alert(pname + " " + pvalue);
-
-	/*Faccio le mie verifiche in php prima di tornare true!!!*/
-
+	
 	/*$.getJSON('ardudome.php?pin=' + pname + '&cmd=' + pvalue + '&random=' + Math.random(), function(data) {value_update(data);});*/
 
 	switch(idvalue){
 
-		case("btnSerrandaYes"):
+		case("btnSerranda"):
 			{
-				$("#dialogo").dialog("close");
+	
 				//alert("Script php verifica stato Campo (CtrlStatusField.php)");
 				/* ---- Chiamo la funzione php che farà le seguenti cose ---
 				 *
@@ -76,9 +73,8 @@ function set_arduino_data(pname,pvalue,idvalue) {
 				 *
 				 */
 				//Funzione da chiamare	--> signalHmi = CtrlStatusField.php
+				jq.mobile.changePage( "dialog_serranda.html", { role: "dialog" });
 				/*Solo per esempio*/ signalHmi="SerrandaOk";
-				flagSet=true;
-				detect_changes();
 			}
 	}	
 	return true;
@@ -90,14 +86,6 @@ function set_arduino_data(pname,pvalue,idvalue) {
 // modified slider and as "pvalue" the actual value of the slider (0 or 1)
 function detect_changes() {
 		
-$("#dialogo").dialog({ buttons: [ { text: "Ok", click: function() { $( this ).dialog( "close" ); } } ] });
-	
-
-	/*$( "#btnSerranda" ).bind( "click", function(event, ui){ 
-			alert ("Entro");
-			flagSet=true;
-			return 0;
-			});*/
 	if(flagSet==true){
 		//if(set_arduino_data($("#btnSerranda").attr("name"),$("#btnSerranda").attr("value")) == true ){
 
@@ -159,11 +147,13 @@ function checkVisibility() {
 
 }
 
+
 // start all above every 5 seconds
 $(document).ready(function(){
     //get_arduino_data();
-    detect_changes();
+    //detect_changes();
     //setInterval('get_arduino_data()', 5000);
-    setInterval('detect_changes()', 10000);
-    checkVisibility();
+    //setInterval('detect_changes()', 10000);
+    //checkVisibility();
+
 });
