@@ -36,95 +36,19 @@
 
         <div class="content-primary">
           <div class="s-title"><center>Outputs</center></div>
+		<div data-role="fieldcontain">
           <ul data-role="listview" data-inset="true" >
-	      <li>
-	    <!--<input type="button" id="btnSerranda" name="OpenSerranda" value="Apertura Serranda" onclick="set_arduino_data(name,value,id);">-->
-		<div class="ui-grid-d">
-			<div class="ui-block-a">Open Box</div>
-			<div class="ui-block-b"></div>
-			<div class="ui-block-c"></div>
-			<div class="ui-block-d"></div>
-			<div class="ui-block-e" data-role="controlgroup" data-type="horizontal">
-			    
-			    <input type="button" id="btnSerranda" name="OpenSerranda" value="Yes" onclick="set_arduino_data(name,value,id);">
-			    <input type="button" id="btnSerranda" name="OpenSerranda" value="False" onclick="set_arduino_data(name,value,id);">
+	      <li><div>SERRANDA</div><br>
+			<div data-role="controlgroup" data-type="horizontal">
+			    	<input type="button" id="btnOpen" name="OpenSerranda" value="Open" onclick="set_arduino_data(name,value,id);">
+			    	<input type="button" id="btnClose" name="OpenSerranda" value="Close" onclick="set_arduino_data(name,value,id);">
+                    	</div>
+	    
 		
-			</div>
-		</div>
             </li>
             <li>
                     <label for="P03"><b>OUT 03</b></label>
                     <select name="P03" id="P03" data-mini="false" data-role="slider">
-                      <option value="0">Off</option>
-                      <option value="1">On</option>
-                    </select>
-            </li>
-            <li>
-                    <label for="P04"><b>OUT 04</b></label>
-                    <select name="P04" id="P04" data-mini="false" data-role="slider">
-                      <option value="0">Off</option>
-                      <option value="1">On</option>
-                    </select>
-            </li>
-            <li>
-                    <label for="P05"><b>OUT 05</b></label>
-                    <select name="P05" id="P05" data-mini="false" data-role="slider">
-                      <option value="0">Off</option>
-                      <option value="1">On</option>
-                    </select>
-            </li>
-            <li>
-                    <label for="P06"><b>OUT 06</b></label>
-                    <select name="P06" id="P06" data-mini="false" data-role="slider">
-                      <option value="0">Off</option>
-                      <option value="1">On</option>
-                    </select>
-            </li>
-            <li>
-                    <label for="P07"><b>OUT 07</b></label>
-                    <select name="P07" id="P07" data-mini="false" data-role="slider">
-                      <option value="0">Off</option>
-                      <option value="1">On</option>
-                    </select>
-            </li>
-            <li>
-                    <label for="P08"><b>OUT 08</b></label>
-                    <select name="P08" id="P08" data-mini="false" data-role="slider">
-                      <option value="0">Off</option>
-                      <option value="1">On</option>
-                    </select>
-            </li>
-            <li>
-                    <label for="P09"><b>OUT 09</b></label>
-                    <select name="P09" id="P09" data-mini="false" data-role="slider">
-                      <option value="0">Off</option>
-                      <option value="1">On</option>
-                    </select>
-            </li>
-            <li>
-                    <label for="P10"><b>OUT 10</b></label>
-                    <select name="P10" id="P10" data-mini="false" data-role="slider">
-                      <option value="0">Off</option>
-                      <option value="1">On</option>
-                    </select>
-            </li>
-            <li>
-                    <label for="P11"><b>OUT 11</b></label>
-                    <select name="P11" id="P11" data-mini="false" data-role="slider">
-                      <option value="0">Off</option>
-                      <option value="1">On</option>
-                    </select>
-            </li>
-            <li>
-                    <label for="P12"><b>OUT 12</b></label>
-                    <select name="P12" id="P12" data-mini="false" data-role="slider">
-                      <option value="0">Off</option>
-                      <option value="1">On</option>
-                    </select>
-            </li>
-            <li>
-                    <label for="P13"><b>OUT 13</b></label>
-                    <select name="P13" id="P13" data-mini="false" data-role="slider">
                       <option value="0">Off</option>
                       <option value="1">On</option>
                     </select>
@@ -139,27 +63,6 @@
                     <label><b>IN A0</b></label>
                     <span class="inputvalue" name="P14" id="P14">0</span>
             </li>
-            <li>
-                    <label><b>IN A1</b></label>
-                    <span class="inputvalue" name="P15" id="P15">0</span>
-            </li>
-            <li>
-                    <label><b>IN A2</b></label>
-                    <span class="inputvalue" name="P16" id="P16">0</span>
-            </li>
-
-            <li>
-                    <label><b>IN A3</b></label>
-                    <span class="inputvalue" name="P17" id="P17">0</span>
-            </li>
-            <li>
-                    <label><b>IN A4</b></label>
-                    <span class="inputvalue" name="P18" id="P18">0</span>
-            </li>
-            <li>
-                    <label><b>IN A5</b></label>
-                    <span class="inputvalue" name="P19" id="P19">0</span>
-            </li>
           </ul>
         </div>
         
@@ -168,7 +71,7 @@
      </div><br>
       
      <div data-theme="d" data-role="footer">
-        <h1>by Luca Soltoggio</h1>
+        <h1>by Lunard</h1>
      </div>
       
     </div>

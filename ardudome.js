@@ -60,7 +60,7 @@ function set_arduino_data(pname,pvalue,idvalue) {
 
 	switch(idvalue){
 
-		case("btnSerranda"):
+		case("btnOpen"):
 			{
 	
 				//alert("Script php verifica stato Campo (CtrlStatusField.php)");
