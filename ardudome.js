@@ -52,29 +52,44 @@ function get_arduino_data() {
 }
 
 // call PHP file sending "pin" & "cmd" got from HTML page, and update
-function set_arduino_data(pname,pvalue,idvalue) {
-            
+function set_arduino_data(pname,idvalue) {
 
-	
+
+
 	/*$.getJSON('ardudome.php?pin=' + pname + '&cmd=' + pvalue + '&random=' + Math.random(), function(data) {value_update(data);});*/
 
-	switch(idvalue){
+	switch(pname){
 
-		case("btnOpen"):
+		case("OpenSerranda"):
 			{
-	
-				//alert("Script php verifica stato Campo (CtrlStatusField.php)");
-				/* ---- Chiamo la funzione php che farà le seguenti cose ---
-				 *
-				 * - Accede al bus i2c e verifica che l'IO "serranda in salita sia attivo".
-				 *    Valori di ritorno:
-				 *	- false: IO feedback sempre a zero serranda non in salita/discesa
-				 *	- true: il comando è andato a buon fine la serranda sta salendo
-				 *
-				 */
-				//Funzione da chiamare	--> signalHmi = CtrlStatusField.php
-				jq.mobile.changePage( "dialog_serranda.html", { role: "dialog" });
-				/*Solo per esempio*/ signalHmi="SerrandaOk";
+				if(idvalue == "btnOpen"){
+
+					//alert("Script php verifica stato Campo (CtrlStatusField.php)");
+					/* ---- Chiamo la funzione php che farà le seguenti cose ---
+					 *
+					 * - Accede al bus i2c e verifica che l'IO "serranda in salita sia attivo".
+					 *    Valori di ritorno:
+					 *	- false: IO feedback sempre a zero serranda non in salita/discesa
+					 *	- true: il comando è andato a buon fine la serranda sta salendo
+					 *
+					 */
+					//Funzione da chiamare	--> signalHmi = CtrlStatusField.php
+					jq.mobile.changePage( "dialogOpenSerranda.html", { role: "dialog" });
+				}
+				if(idvalue == "btnClose"){
+
+					//alert("Script php verifica stato Campo (CtrlStatusField.php)");
+					/* ---- Chiamo la funzione php che farà le seguenti cose ---
+					 *
+					 * - Accede al bus i2c e verifica che l'IO "serranda in salita sia attivo".
+					 *    Valori di ritorno:
+					 *	- false: IO feedback sempre a zero serranda non in salita/discesa
+					 *	- true: il comando è andato a buon fine la serranda sta salendo
+					 *
+					 */
+					//Funzione da chiamare	--> signalHmi = CtrlStatusField.php
+					jq.mobile.changePage( "dialogCloseSerranda.html", { role: "dialog" });
+				}
 			}
 	}	
 	return true;
