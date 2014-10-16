@@ -37,8 +37,20 @@
         <div class="content-primary">
           <div class="s-title"><center>Outputs</center></div>
           <ul data-role="listview" data-inset="true" >
-            <li>
-		 <input type="button" id="btnSerranda" name="OpenSerranda" value="Apertura Serranda" onclick="set_arduino_data(name,value,id);">
+	      <li>
+	    <!--<input type="button" id="btnSerranda" name="OpenSerranda" value="Apertura Serranda" onclick="set_arduino_data(name,value,id);">-->
+		<div class="ui-grid-d">
+			<div class="ui-block-a">Open Box</div>
+			<div class="ui-block-b"></div>
+			<div class="ui-block-c"></div>
+			<div class="ui-block-d"></div>
+			<div class="ui-block-e" data-role="controlgroup" data-type="horizontal">
+			    
+			    <input type="button" id="btnSerranda" name="OpenSerranda" value="Yes" onclick="set_arduino_data(name,value,id);">
+			    <input type="button" id="btnSerranda" name="OpenSerranda" value="False" onclick="set_arduino_data(name,value,id);">
+		
+			</div>
+		</div>
             </li>
             <li>
                     <label for="P03"><b>OUT 03</b></label>
