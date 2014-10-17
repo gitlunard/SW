@@ -4,9 +4,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
     
-
-    <script src="ardudome.js"></script>
-
 </head> 
 <body> 
 
@@ -19,7 +16,8 @@
 
 		<div data-role="content" data-theme="c">
 		<h1>VUOI APRIRE LA SERRANDA</h1>
-		<input type="button" data-theme="b" id="btnSerrandaYes" value="Yes" onclick="set_arduino_data(name,value,id);"/>       
+		<div class="container"><div class="progressbar"></div></div>
+		<input type="button" data-theme="b" id="btnSerrandaYes" value="Yes" name="BoxOpenYes" onclick="operation(name,id);"/>       
 		<input type="button" data-theme="b" id="btnSerrandaNo" value="No"/>       
 		</div>
 	</div>

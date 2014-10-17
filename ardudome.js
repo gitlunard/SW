@@ -29,6 +29,7 @@ function sleep(milliseconds) {
 }
 	
 
+
 // get and parse json data from PHP file and update HTML page
 function get_arduino_data() {
     if (visibleFlag) {
