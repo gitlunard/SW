@@ -1,0 +1,15 @@
+Per poter comandare liberamente i led è necessario liberare le risorse.
+
+Ovvero rimuovere i seguenti moduli
+
+- rmmod gpio_button_hotplug #libera la gestione del tasto WPS/RESET
+
+- rmmod leds_gpio #libera la gestione dei led
+
+Uso GPIO (GPIO26 led WPS):
+- echo 26 > /sys/class/gpio/export
+- echo "in o out" > gpioX/direction
+- echo "0/1"	  > gpioX/value
+
+
+Led tabella riferimento http://wiki.openwrt.org/toh/tp-link/tl-mr3020
