@@ -14,41 +14,70 @@ function setProgress(progress)
     $(".progressbar").width(progressBarWidth).html(progress + "% ");
 }
 
-function operation(pname,idvalue) {
+function operation(pname) {
 
-
-	/*$.getJSON('ardudome.php?pin=' + pname + '&cmd=' + pvalue + '&random=' + Math.random(), function(data) {value_update(data);});*/
 
 	switch(pname){
 
-		case("BoxOpenYes"):
+		case("ShutterOpenYes"):
 			{
-				if(idvalue == "btnSerrandaYes"){
-
-					//alert("Script php verifica stato Campo (CtrlStatusField.php)");
-					/* ---- Chiamo la funzione php che farà le seguenti cose ---
-					 *
-					 * - Accede al bus i2c e verifica che l'IO "serranda in salita sia attivo".
-					 *    Valori di ritorno:
-					 *	- false: IO feedback sempre a zero serranda non in salita/discesa
-					 *	- true: il comando è andato a buon fine la serranda sta salendo
-					 *
-					 */
-					//Funzione da chiamare	--> signalHmi = CtrlStatusField.php
-					setProgress(80);
-					jq.mobile.changePage( "ardudome.html");
-					//$("#dialogo").dialog("close");
-				}
+				
+				var richiesta = $.ajax({
+                                        url: 'ControlObject_x86.php',
+                                        type: 'post',
+                                        data: {typeCommand: "ShutterOpen"},
+                                        success: function( data ) {
+                                                console.log( "SendCommand OK!!" );
+                                                window.open("ardudome.html","_self")
+					}
+				});	
 			}
-	}	
-	return true;
+			break;
+		case("ShutterCloseYes"):
+			{
+				
+				var richiesta = $.ajax({
+                                        url: 'ControlObject_x86.php',
+                                        type: 'post',
+                                        data: {typeCommand: "ShutterClose"},
+                                        success: function( data ) {
+                                                console.log( "SendCommand OK!!" );
+                                                window.open("ardudome.html","_self")
+					}
+				});	
+			}
+			break;
 
+		default:
+                                                
+			console.log( "SendCommand OK!!" );
+                        window.open("ardudome.html","_self");
+		}
 
 }
 
-
-// start all above every 5 seconds
-$(document).ready(function(){
-    //setInterval('detect_changes()', 10000);
+$(function() {
+$( "#btnOpenShutterYes" ).bind( "click", function(event, ui) {
+	
+		operation('ShutterOpenYes');	
 
 });
+$( "#btnOpenShutterNo" ).bind( "click", function(event, ui) {
+		
+		operation('ShutterOpenNo');	
+		
+		
+});
+$( "#btnCloseShutterYes" ).bind( "click", function(event, ui) {
+	
+		operation('ShutterCloseYes');	
+
+});
+$( "#btnCloseShutterNo" ).bind( "click", function(event, ui) {
+		
+		operation('ShutterCloseNo');	
+		
+		
+});
+
+});		
