@@ -1,0 +1,11 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+
+#Libero i GPIO da gestioni di default
+rmmod gpio_button_hotplug
+rmmod leds_gpio
+
+#Export e setto come uscita il GPIO del WPS/RESET
+echo 26 > /sys/class/gpio/export
+echo out > /sys/class/gpio/gpio26/direction
+exit 0

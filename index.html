@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!--<title>AutomLunard</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="apple-touch-icon" href="../images/conference-room.png"/>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+-->
+
+
+    <title>AutomLunard</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon" href="../images/conference-room.png"/>
+    
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <!--<link rel="stylesheet" href="jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.css" />-->
+    
+    <script src="offlineResource/jquery-1.8.2.min.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+    <script src="offlineResource/jquery.min.js"></script>
+    
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!--<script src="jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.js"></script>-->
+	
+
+
+
+
+
+
+<script>
+var jq = jQuery.noConflict();
+</script>
+
+
+<script  src="javaScript/main.js"></script><!--PATH_LEO-->
+
+<script  src="javaScript/control/SendCmdOneRow.js"></script><!--PATH_LEO-->
+<script  src="javaScript/control/SendCmdSecondRow.js"></script><!--PATH_LEO-->
+<script  src="javaScript/control/StatusFieldOneRow.js"></script><!--PATH_LEO-->
+<script  src="javaScript/control/StatusFieldSecondRow.js"></script><!--PATH_LEO-->
+
+<!--<link rel="stylesheet" href="ardudome.css" />
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>-->
+</head>
+
+<body>
+<div data-role="page" data-title="AutomLunard" id="ardudome-page">
+
+<div data-theme="b" data-role="header"><h1>AutomLunard</h1></div>
+
+
+<div data-theme="b" data-role="collapsible" data-collapsed="true">
+    <h4>CONTROLS</h4>
+		<ul data-role="listview" data-inset="false" >
+			<li>
+			<table style="width:100%">
+				<tr>
+				<td width="10%"><label for="OneRow" ><b id="OneRow"></b></td>
+				<td width="10%"><a href="#" data-role="button" id="btnA_OneRow" class="ui-disabled"><p id="btnA_OneRow"></p></a></td>
+				<td width="10%"><a href="#" data-role="button" id="btnB_OneRow" class="ui-disabled"><p id="btnB_OneRow"></p></a></td>
+				</tr>
+			</table>
+			</li>
+			<li>
+			<table style="width:100%">
+				<tr>
+				<td width="10%"><label for="SecondRow"><b>SECOND_ROW</b></td>
+				<td width="10%"><a href="#" data-role="button" id="btnA_SecondRow" class="ui-disabled">ButtonA</a></td>
+				<td width="10%"><a href="#" data-role="button" id="btnB_SecondRow" class="ui-disabled">ButtonB</a></td>
+				</tr>
+			</table>
+			</li>
+			</ul>
+</div>
+<div data-theme="b" data-role="collapsible" data-collapsed="true">
+    <h4>STATES</h4>
+		<ul data-role="listview" data-inset="false" >
+			<li>
+			<table style="width:100%">
+				<tr>
+				<td width="10%"><label for="Light1"><b>LUCE SALA</b></td>
+				<td width="10%"><a href="#" data-role="button" id="" class="ui-enabled">Accesa</a></td>
+				<td width="10%"><a href="#" data-role="button" id="" class="ui-disabled">Spenta</a></td>
+				</tr>
+			</table>
+			</li>
+			<li>
+			<table style="width:100%">
+				<tr>
+				<td width="10%"><label for="Light2"><b>LUCE CUCINA</b></td>
+				<td width="10%"><a href="#" data-role="button" id="" class="ui-disabled">Accesa</a></td>
+				<td width="10%"><a href="#" data-role="button" id="" class="ui-enabled">Spenta</a></td>
+				</tr>
+			</table>
+			<li>
+			<table style="width:100%">
+				<tr>
+				<td width="10%"><label for="T1"><b>ROOM_1 (°C)</b></td>
+				<td width="10%"><input type="range" name="slider-room1" id="slider-room1" min="10" max="30" step="1" value="15"></td>
+				</tr>
+			</table>
+			</li>
+			<li>
+			<table style="width:100%">
+				<tr>
+				<td width="10%"><label for="T2"><b>ROOM_2 (°C)</b></td>
+				<td width="10%"><input type="range" name="slider-room2" id="slider-room2" min="10" max="30" step="1" value="15"></td>
+				</tr>
+			</table>
+			</li>
+			</ul>
+</div>
+
+<div data-theme="b" data-role="collapsible" data-collapsed="true">
+    <h4>TEMPERATURES SETTINGS</h4>
+		<ul data-role="listview" data-inset="false" >
+			<li>
+			<table style="width:100%">
+				<tr>
+				<td width="10%"><label for="T1"><b>ROOM_1 (°C)</b></td>
+				<td width="10%"><input type="range" name="slider-room1" id="slider-room1" min="10" max="30" step="1" value="15"></td>
+				</tr>
+			</table>
+			</li>
+			<li>
+			<table style="width:100%">
+				<tr>
+				<td width="10%"><label for="T2"><b>ROOM_2 (°C)</b></td>
+				<td width="10%"><input type="range" name="slider-room2" id="slider-room2" min="10" max="30" step="1" value="15"></td>
+				</tr>
+			</table>
+			</li>
+			</ul>
+</div>
+
+<div data-theme="b" data-role="footer">
+<h1>by Lunard</h1>
+</div>
+
+</div>
+
+<script  src="style/descrNameItems.js"></script>
+
+</body>
+
+</html>
