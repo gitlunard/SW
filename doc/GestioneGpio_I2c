@@ -1,0 +1,80 @@
+Per poter comandare liberamente i led dell'mr3020 è necessario liberare le risorse.
+
+Ovvero rimuovere i seguenti moduli
+
+- rmmod gpio_button_hotplug #libera la gestione del tasto WPS/RESET
+
+- rmmod leds_gpio #libera la gestione dei led
+
+Uso GPIO (GPIO26 led WPS):
+- echo 26 > /sys/class/gpio/export
+- echo "in o out" > gpioX/direction
+- echo "0/1"	  > gpioX/value
+
+
+Led tabella riferimento http://wiki.openwrt.org/toh/tp-link/tl-mr3020
+
+
+Per automatizzare all'avvio i comando di cui sopra inserirli in rc.local
+
+
+
+Gestione I2C
+
+- Installare il modulo per I2C:
+
+	# opkg update
+	# opkg install kmod-i2c-gpio-custom kmod-i2c-core
+	# insmod i2c-dev
+	# insmod i2c-gpio-custom bus0=0,29,7
+	# dmesg | grep gpio
+	Mar 23 09:01:23 openwrt kern.info kernel: [   52.910000] Custom GPIO-based I2C driver version 0.1.1
+	Mar 23 09:01:23 openwrt kern.info kernel: [   52.910000] i2c-gpio i2c-gpio.0: using pins 7 (SDA) and 29 (SCL)
+
+
+- Automatizzare caricamento del modulo:
+
+	Creare il file /etc/modules.d/99-i2c 
+	inserire nel file la riga --> i2c-gpio-custom bus0=0,29,7
+
+- Installare utiliti per i2c
+
+	# opkg update
+	# opkg install i2c-tools
+	# opkg install i2c-tools-dev
+
+- Comando I2C per ricerca periferici
+
+	# i2cdetect  -y i2c-gpio0
+
+	Risposta del 10-09-2015:
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+20: -- -- -- -- -- -- -- 27 -- -- -- -- -- -- -- -- 
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+70: -- -- -- -- -- -- -- --
+
+- Comando uscita PIN 5 I2C
+
+	i2cset -y 0 0x27 0x01 (non ha attivato nulla non funziona)
+
+- Comando lettura PIN 5 I2C
+
+	i2cget -y 0 0x27 0x01 (non ho applicato tensione agli ingressi quindi non provato)	
+	
+	
+
+
+Siti di riferimento:
+
+http://www.equinoxefr.org/post/2012/11/12/mr3020-et-i2c-avec-les-gpio/
+
+http://wiki.openwrt.org/toh/tp-link/tl-mr3020
+
+http://wiki.openwrt.org/doc/hardware/port.i2c
+
+http://elinux.org/EBC_Exercise_12_I2C
