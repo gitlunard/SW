@@ -23,47 +23,49 @@ function operation(pname) {
 			{
 				
 				var richiesta = $.ajax({
-                                        url: 'http://localhost/mr3020_temp/control_page/one_row/phpScripts/exec_x86.php',//PATH_LEO
+                                        url: '/mr3020-jquery/control_page/one_row/phpScripts/exec_x86.php',//PATH_LEO
                                         type: 'post',
                                         data: {typeCommand: "btnDialogAYes"},
                                         success: function( data ) {
-                                                console.log( "SendCommand OK!!" );
-                                                window.open("http://localhost/mr3020_temp/index.html","_self")//PATH_LEO
+                                                console.log( "SendCommand btnA Yes!!" );
+                                                window.open("/mr3020-jquery/index.html","_self")//PATH_LEO
 					}
 				});	
 			}
 			break;
 		case("btnDialogANo"):
 			{
+                                                console.log( "SendCommand btnA No!!" );
 				
-                                                window.open("http://localhost/mr3020_temp/index.html","_self") //PATH_LEO
+                                                window.open("/mr3020-jquery/index.html","_self") //PATH_LEO
 			}
 			break;
 		case("btnDialogBYes"):
 			{
 
 				var richiesta = $.ajax({
-                                        url: 'http://localhost/mr3020_temp/control_page/one_row/phpScripts/exec_x86.php',//PATH_LEO
+                                        url: '/mr3020-jquery/control_page/one_row/phpScripts/exec_x86.php',//PATH_LEO
                                         type: 'post',
                                         data: {typeCommand: "btnDialogBYes"},
                                         success: function( data ) {
-                                                console.log( "SendCommand OK!!" );
-                                                window.open("http://localhost/mr3020_temp/index.html","_self")//PATH_LEO
+                                                console.log( "SendCommand btnB Yes!!" );
+                                                window.open("/mr3020-jquery/index.html","_self")//PATH_LEO
 					}
 				});	
 			}
 			break;
 		case("btnDialogBNo"):
 			{
+                                                console.log( "SendCommand btnB NO!!" );
 				
-                                                window.open("http://localhost/mr3020_temp/index.html","_self")//PATH_LEO
+                                                window.open("/mr3020-jquery/index.html","_self")//PATH_LEO
 			}
 			break;
 
 		default:
                                                 
-			console.log( "SendCommand OK!!" );
-                        window.open("http://localhost/mr3020_temp/index.html","_self");//PATH_LEO
+			console.log( "SendCommand default case!!" );
+                        window.open("/mr3020-jquery/index.html","_self");//PATH_LEO
 		}
 
 }
