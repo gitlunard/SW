@@ -20,21 +20,19 @@ function SendCmdOneRow(pname) {
 			{
 
 
-				//jq.mobile.changePage( "dialogOpenShutter.html", { role: "dialog" });
-				window.open("http://localhost/mr3020_temp/control_page/one_row/page/dialogBtnA.html","_self"); //PATH_LEO
+				window.open("/mr3020-jquery/control_page/one_row/page/dialogBtnA.html","_self"); //PATH_LEO
 			}
 			break;
 
 		case ("btnB_OneRow"):
 			{
 
-				//jq.mobile.changePage( "dialogCloseShutter.html", { role: "dialog" });
-				window.open("http://localhost/mr3020_temp/control_page/one_row/page/dialogBtnB.html","_self"); //PATH_LEO
+				window.open("/mr3020-jquery/control_page/one_row/page/dialogBtnB.html","_self"); //PATH_LEO
 			}
 			break;
 
 		default:
-			window.open("http://localhost/mr3020_temp/index.html","_self"); //PATH_LEO
+			window.open("/mr3020-jquery/index.html","_self"); //PATH_LEO
 
 	}
 
