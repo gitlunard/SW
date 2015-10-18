@@ -1,0 +1,78 @@
+package it.test.serviceschedule;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.SocketException;
+import java.util.Enumeration;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.widget.TextView;
+import android.os.AsyncTask;
+
+
+public class ServerTcp extends AsyncTask{
+	private String to;
+	private String from;
+	private String subject;
+	private String message;
+	private ServerSocket serverSocket;
+	//Thread socketServerThread = new Thread(new SocketServerThread());
+	private final int SERVER_PORT = 8080; 
+	
+	public  ServerTcp (String to, String from, String subject, String message) {
+		this.to = to;
+		this.from = from;
+		this.subject = subject;
+		this.message = message;
+		
+	}
+	//@Override
+	protected Object doInBackground(Object... arg0) {
+		//New thread to listen to incoming connections
+		  new Thread(new Runnable() {
+			  @Override
+			   public void run() {
+				  try {
+					     //Create a server socket object and bind it to a port
+					     ServerSocket socServer = new ServerSocket(SERVER_PORT);
+					     //Create server side client socket reference
+					     Socket socClient = null;
+					     //Infinite loop will listen for client requests to connect
+					     while (true) {
+					      //Accept the client connection and hand over communication to server side client socket
+					      socClient = socServer.accept();
+					      //For each client new instance of AsyncTask will be created
+					      
+					      ///////ServerAsyncTask serverAsyncTask = new ServerAsyncTask();
+					      
+					      //Start the AsyncTask execution 
+					      //Accepted client socket object will pass as the parameter
+					      
+					      //serverAsyncTask.execute(new Socket[] {socClient});
+					      
+					      //execute(new Socket[] {socClient});
+					     
+					     
+					     
+					     }
+					    } catch (IOException e) {
+					     e.printStackTrace();
+					    }
+					   
+			  }
+			  
+			  
+		  }).start();
+		  
+		return null;
+		
+	}//	doInBackground
+	
+	
+	}
+	

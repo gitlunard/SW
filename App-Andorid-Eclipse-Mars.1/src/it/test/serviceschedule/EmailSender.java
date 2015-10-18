@@ -1,0 +1,56 @@
+package it.test.serviceschedule;
+
+import android.os.AsyncTask;
+import android.util.Log;
+
+/**
+ * le operazioni di rete non possono essere eseguite sul thread principale, 
+ * quindi per mandare una email serve un altro thread.
+ * Il metodo doInBackgroud di AsyncTask viene eseguito su un altro thread.
+ * 
+ * @author davide
+ *
+ */
+public class EmailSender extends AsyncTask{
+	private String to;
+	private String from;
+	private String subject;
+	private String message;
+	
+	
+	public EmailSender (String to, String from, String subject, String message) {
+		this.to = to;
+		this.from = from;
+		this.subject = subject;
+		this.message = message;
+	}
+
+	@Override
+	protected Object doInBackground(Object... arg0) {
+		Mail mail = new Mail();
+		if (subject != null && subject.length() > 0) {
+			mail.setSubject(subject);
+		} else {
+			mail.setSubject("Subject");
+		}
+
+		if (message != null && message.length() > 0) {
+			mail.setBody(message);
+		} else {
+			mail.setBody("Message");
+		}
+
+		mail.setTo(new String[] {to});
+
+		boolean result = false;
+		try {
+			result = mail.send();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		Log.i("invio email", "" + result);
+		return null;
+	}
+
+}

@@ -1,0 +1,65 @@
+package it.test.serviceschedule;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.SocketException;
+import java.util.Enumeration;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.os.AsyncTask;
+import android.util.Log;
+
+/**
+ * 
+ * @author leo
+ *
+ */
+public class ServerLeo extends AsyncTask<Socket, Void, String>{
+	
+	//public ServerLeo (String to, String from, String subject, String message) {
+	public ServerLeo () {
+		//this.to = to;
+		//this.from = from;
+		//this.subject = subject;
+		//this.message = message;
+	}
+
+	@Override
+	protected String doInBackground(Socket... params) {
+		String result = null;
+		//Get the accepted socket object 
+		Socket mySocket = params[0];
+		try {
+		    //Get the data input stream comming from the client 
+		    InputStream is = mySocket.getInputStream();
+		    //Get the output stream to the client
+		    PrintWriter out = new PrintWriter(
+		      mySocket.getOutputStream(), true);
+		    //Write data to the data output stream
+		    out.println("Hello from server");
+		    //Buffer the data input stream
+		    BufferedReader br = new BufferedReader(
+		      new InputStreamReader(is));
+		    //Read the contents of the data buffer
+		    result = br.readLine();
+		    //Close the client connection
+		    mySocket.close();
+		   } catch (IOException e) {
+		    e.printStackTrace();
+		   }
+		//Log.i("invio email", "" + result);
+		return result;
+	}
+
+}

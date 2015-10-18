@@ -1,0 +1,43 @@
+package it.test.serviceschedule;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.SocketException;
+import java.util.Enumeration;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.widget.TextView;
+import android.os.AsyncTask;
+
+
+public class ServerTcp extends AsyncTask{
+	private String to;
+	private String from;
+	private String subject;
+	private String message;
+	private ServerSocket serverSocket;
+	//Thread socketServerThread = new Thread(new SocketServerThread());
+	
+	public  ServerTcp (String to, String from, String subject, String message) {
+		this.to = to;
+		this.from = from;
+		this.subject = subject;
+		this.message = message;
+	}
+	//@Override
+	protected Object doInBackground(Object... arg0) {
+		
+		//private class SocketServerThread extends Thread
+		
+		return null;
+		
+	}//	doInBackground
+	
+	
+	}
+	
