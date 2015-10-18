@@ -1,0 +1,7 @@
+INDEX VERSION 1.127+/usr/local/leo-dati/Esempi_sourcecode/androidEsempi/ServiceScheduler_Davide/.metadata/.plugins/org.eclipse.jdt.core
+3375476828.index
+3051501901.index
+530140098.index
+2023167343.index
+3712900773.index
+2270797907.index

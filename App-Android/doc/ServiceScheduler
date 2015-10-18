@@ -1,0 +1,17 @@
+
+Il file ServerLeo.java implementa una connessione tcp!!
+
+Per testarla eseguire i seguenti passi:
+
+- Andare nella cartella eclipse/android-sdk-linux/platform-tools ed eseguire il comando
+
+ ./adb logcat MyApp:d *:s
+
+il comando di cui sopra permette di visualizzare su console tutte le istruzioni di debug del tipo
+
+			Log.d("MyApp","...qualcosa")
+
+Per testare invece la socket vera e propria eseguire una connessione tramite telnet seguendo i passi indicati nel sito:
+
+		
+		http://www.byteslounge.com/tutorials/how-to-connect-to-an-android-server-socket-in-the-emulator
