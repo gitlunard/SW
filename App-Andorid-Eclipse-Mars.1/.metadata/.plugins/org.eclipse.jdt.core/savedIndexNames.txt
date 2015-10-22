@@ -1,6 +1,0 @@
-INDEX VERSION 1.127+/usr/local/leo-dati/Router_prj/LeoGoLu/mr3020-jquery/App-Andorid-Eclipse-Mars.1/.metadata/.plugins/org.eclipse.jdt.core
-1730626674.index
-2659003813.index
-1034113777.index
-3051501901.index
-1620720386.index
