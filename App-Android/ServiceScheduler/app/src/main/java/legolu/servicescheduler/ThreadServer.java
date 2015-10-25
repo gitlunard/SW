@@ -4,6 +4,7 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -16,20 +17,20 @@ public class ThreadServer implements Runnable {
     public static final int SERVERPORT = 4444;
     private boolean running = false;
     private PrintWriter mOut;
+    private final Context context;
 
 
     /**
      * Constructor of the class
      * @param
      */
-    public ThreadServer() {
+    public ThreadServer(Context context) {
 
-
+        this.context = context;
     }
 
     @Override
     public void run() {
-
 
         running = true;
 
@@ -45,7 +46,7 @@ public class ThreadServer implements Runnable {
 
             try {
 
-                ExecuteAction executeAction = new ExecuteAction();
+                ExecuteAction executeAction = new ExecuteAction(context);
                 //sends the message to the client
                 mOut = new PrintWriter(new BufferedWriter(new OutputStreamWriter(client.getOutputStream())), true);
 
@@ -64,7 +65,6 @@ public class ThreadServer implements Runnable {
 
                     executeAction.notify(message);
 
-
                 }
 
             } catch (Exception e) {
@@ -81,7 +81,5 @@ public class ThreadServer implements Runnable {
         }
 
     }
-
-
 
 }

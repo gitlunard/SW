@@ -17,8 +17,11 @@ public class Globals {
     }
 
     private WifiManager.WifiLock wifiLock;
+    private final String destinationNumber;
 
     private Globals() {
+
+        this.destinationNumber = "0123456789";
     }
 
     //TODO usare Optional
@@ -27,5 +30,9 @@ public class Globals {
     }
     public void setWifiLock(WifiManager.WifiLock lock) {
         this.wifiLock = lock;
+    }
+
+    public String getDestinationNumber() {
+        return destinationNumber;
     }
 }

@@ -45,7 +45,7 @@ public class Main extends Activity {
 
         try {
 
-            new Thread(new ThreadServer()).start();
+            new Thread(new ThreadServer(getApplicationContext())).start();
 
             /*LB: Quello che segue è commentato perchè non funziona la ricezione sulla socket
             * Sarebbe meglio fare andare questo ed eliminare ThreadServer.java*/
