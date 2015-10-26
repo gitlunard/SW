@@ -9,8 +9,6 @@ import android.util.Log;
 public class ExecuteAction {
 
     private final static String TAG = "ExecuteAction";
-    private final static String SEND_SMS = "SendSMS";
-    private final static String SEND_EMAIL = "SendEmail";
 
     private final Context context;
 
@@ -28,7 +26,7 @@ public class ExecuteAction {
                 break;
             }
 
-            case (SEND_SMS) : {
+            case (Actions.SEND_SMS) : {
 
                 Log.d(TAG, "must send SMS");
                 SMSSender smsSender = new SMSSender(context);
@@ -36,7 +34,7 @@ public class ExecuteAction {
                 break;
             }
 
-            case (SEND_EMAIL) : {
+            case (Actions.SEND_EMAIL) : {
 
                 Log.d(TAG, "must send Email");
                 EmailSender emailSender = new EmailSender();
