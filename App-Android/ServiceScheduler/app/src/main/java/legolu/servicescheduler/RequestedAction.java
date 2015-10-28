@@ -5,7 +5,7 @@ package legolu.servicescheduler;
  */
 public interface RequestedAction {
 
-    public void executeRequest();
+    public void executeRequest(String text);
 }
 
 

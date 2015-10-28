@@ -13,7 +13,7 @@ public class EmailSender implements RequestedAction {
 	private final static String TAG = "EmailSender";
 
 	@Override
-	public void executeRequest() {
+	public void executeRequest(String text) {
 
 		//TODO
 		Log.i(TAG, "TODO");

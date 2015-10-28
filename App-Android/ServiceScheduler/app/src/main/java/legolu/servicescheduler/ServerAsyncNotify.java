@@ -15,9 +15,9 @@ import java.net.Socket;
  * Il metodo doInBackgroud di AsyncTask viene eseguito su un altro thread.
  *
  * @author leo
+ * @deprecated
  *
  */
-
 public class ServerAsyncNotify extends AsyncTask{
 
     public static final int SERVERPORT = 5555;

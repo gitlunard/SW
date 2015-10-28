@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 /**
  * The class extends the Thread class so we can receive and send messages at the same time
+ * @deprecated
  */
 public class ThreadServer implements Runnable {
 

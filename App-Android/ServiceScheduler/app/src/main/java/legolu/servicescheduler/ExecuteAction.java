@@ -20,17 +20,11 @@ public class ExecuteAction {
 
         switch (message) {
 
-            case("prova"): {
-
-                Log.d("switch", message);
-                break;
-            }
-
             case (Actions.SEND_SMS) : {
 
                 Log.d(TAG, "must send SMS");
                 SMSSender smsSender = new SMSSender(context);
-                smsSender.executeRequest();
+                smsSender.executeRequest("Testo SMS");
                 break;
             }
 
@@ -38,7 +32,7 @@ public class ExecuteAction {
 
                 Log.d(TAG, "must send Email");
                 EmailSender emailSender = new EmailSender();
-                emailSender.executeRequest();
+                emailSender.executeRequest("Testo Email");
                 break;
             }
 

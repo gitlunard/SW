@@ -18,9 +18,9 @@ import android.util.Log;
  * telnet localhost 5554
  * sms send senderPhoneNumber textMessage
  */
-public class SmsReceiver extends BroadcastReceiver {
+public class SMSReceiver extends BroadcastReceiver {
 
-    private final static String TAG = "SmsReceiver";
+    private final static String TAG = "SMSReceiver";
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -53,8 +53,9 @@ public class SmsReceiver extends BroadcastReceiver {
                             String messageBody = messages[i].getMessageBody();
                             Log.d(TAG, messageBody);
                             if (messageBody.equals(Actions.HANDLE_SMS)) {
-                                SMSReceivedHandler handler = new SMSReceivedHandler();
-                                handler.executeRequest();
+                                SMSReceivedHandler handler = new SMSReceivedHandler(
+                                        Globals.getInstance().getWebSocket());
+                                handler.executeRequest(messageBody);
                             }
                             else {
                                 Log.d(TAG, "Unknown SMS");

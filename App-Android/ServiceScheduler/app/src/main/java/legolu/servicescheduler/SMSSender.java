@@ -29,9 +29,7 @@ public class SMSSender extends BroadcastReceiver implements RequestedAction {
     }
 
     @Override
-    public void executeRequest() {
-
-        String message = "Hello World!";
+    public void executeRequest(String message) {
 
         Intent sentIntent = new Intent(ACTION);
 

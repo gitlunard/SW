@@ -10,23 +10,23 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="54dp"
-        android:text="Start Schedule" android:onClick="btnStartSchedule"/>
+        android:text="Start Socket" android:onClick="btnStartSocket"/>
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/button1"
+        android:layout_marginTop="40dp"
+        android:text="Start WebSocket" android:onClick="btnStartWebSocket"
         android:layout_below="@+id/button1"
-        android:layout_marginTop="41dp"
-        android:text="Cancel Schedule" android:onClick="btnCancelSchedules"/>
+        android:layout_centerHorizontal="true" />
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/button2"
-        android:layout_below="@+id/button2"
-        android:layout_marginTop="41dp"
-        android:text="Exit Schedule" android:onClick="btnExitSchedules"/>
+        android:text="Exit Schedule" android:onClick="btnExitSchedules"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_alignStart="@+id/button1" />
 
 </RelativeLayout>

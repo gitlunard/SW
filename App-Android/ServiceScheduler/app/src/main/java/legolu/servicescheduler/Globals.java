@@ -2,6 +2,8 @@ package legolu.servicescheduler;
 
 import android.net.wifi.WifiManager;
 
+import com.neovisionaries.ws.client.WebSocket;
+
 /**
  * Application globals.
  *
@@ -19,6 +21,8 @@ public class Globals {
     private WifiManager.WifiLock wifiLock;
     private final String destinationNumber;
 
+    private WebSocket webSocket;
+
     private Globals() {
 
         this.destinationNumber = "0123456789";
@@ -34,5 +38,12 @@ public class Globals {
 
     public String getDestinationNumber() {
         return destinationNumber;
+    }
+
+    public WebSocket getWebSocket() {
+        return webSocket;
+    }
+    public void setWebSocket(WebSocket webSocket) {
+        this.webSocket = webSocket;
     }
 }

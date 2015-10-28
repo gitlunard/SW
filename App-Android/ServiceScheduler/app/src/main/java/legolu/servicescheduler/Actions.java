@@ -6,7 +6,7 @@ package legolu.servicescheduler;
 public class Actions {
 
     public final static String SEND_SMS = "SendSMS";
-    public final static String HANDLE_SMS = "HandleSMS";
+    public final static String HANDLE_SMS = "ReceivedSMS";
     public final static String SEND_EMAIL = "SendEmail";
 
 }
