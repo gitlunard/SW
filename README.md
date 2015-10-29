@@ -1,4 +1,5 @@
 # SW
+[![Build Status](https://travis-ci.org/gitlunard/SW.svg?branch=master)](https://travis-ci.org/gitlunard/SW)
 
 Il progetto è descritto nei file srs/sdd con estensione odt, disposti nelle varie cartelle.
 Essendo il progetto giovane, qualcosa potrebbe mancare!!! Aiutaci a completarlo!!!
