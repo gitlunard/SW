@@ -18,7 +18,7 @@ import android.util.Log;
  * telnet localhost 5554
  * sms send senderPhoneNumber textMessage
  */
-public class SmsReceiverTmp extends BroadcastReceiver {
+public class SMSReceiver extends BroadcastReceiver {
 
     private final static String TAG = "SMSReceiver";
 
