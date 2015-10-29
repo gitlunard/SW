@@ -1,0 +1,19 @@
+before_script: cd App-Android/ServiceScheduler/app
+
+language: android
+
+android:
+   components:
+      - build-tools-23.0.1
+      - android-23
+      
+      - extra-google-google_play_services
+      - extra-google-m2repository
+      - extra-android-m2repository
+      - addon-google_apis-google-23
+
+
+notifications:
+  email: false
+
+script: ../gradlew build
